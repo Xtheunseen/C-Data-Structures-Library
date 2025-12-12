@@ -2,7 +2,7 @@
 #define LINKEDLIST_H
 
 typedef struct{
-    int item;
+    int data;
     struct Node* next;
 }Node;
 
@@ -11,3 +11,5 @@ struct Node* createList(int n);
 void traverseList(struct Node* head);
 
 #endif
+
+
