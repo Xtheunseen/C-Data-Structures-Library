@@ -8,6 +8,7 @@ typedef struct {
     int capacity;
 } Queue;
 
+Queue* createQueue(int capacity);
 void enqueue(Queue* queue, int item);
 int dequeue(Queue* queue);
 int peek(Queue* queue);

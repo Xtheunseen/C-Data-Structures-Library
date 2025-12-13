@@ -7,7 +7,7 @@ typedef struct {
     int capacity;
 } Stack;
 
-Stack* createaStack(int capaicty);
+Stack* createStack(int capaicty);
 void push(Stack* stack, int item);
 int pop(Stack* stack);
 int peek(Stack* stack);
