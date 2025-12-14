@@ -9,6 +9,7 @@ typedef struct{
 struct Node* createNode(int data);
 struct Node* createList(int n);
 void traverseList(struct Node* head);
+void freeList(Node* head);
 
 #endif
 
