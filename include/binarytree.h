@@ -8,8 +8,9 @@ typedef struct{
 }Node;
 
 struct Node* addNode(int data);
-void removeNode(struct Node* root, int data);
-void search(struct Node* root);
+struct Node* insertNode(struct Node* root, int data);
+struct Node* removeNode(struct Node* root, int data);
+struct Node*(struct Node* root, int data);
 
 
 #endif

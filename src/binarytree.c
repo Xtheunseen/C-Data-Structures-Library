@@ -8,14 +8,15 @@ struct Node* addNode(int data)
     node->data = data;
     node->left = NULL;
     node->right = NULL;
+    return node;
 }
 
-void removeNode(struct Node* root, int data)
+struct Node* removeNode(struct Node* root, int data)
 {
-    if root = NULL
+    if (root == NULL)
     {
         printf("Null node");
-        return;
+        return NULL;
     }
 
     if (data < root->data)
@@ -26,19 +27,24 @@ void removeNode(struct Node* root, int data)
     {
         root->right = removeNode(root->right, data);
     }
-    else if (data = root->data)
+    else if (data == root->data)
     {
         if (root->left == NULL && root->right == NULL)
-            free(root)
+        {
+            free(root);
+            return NULL;
+        }
         else if (root->left == NULL)
         {
             Node* temp = root->right;
             free(root);
+            return temp;
         }
         else  if(root->right == NULL)
         {
             Node* temp = root->left;
-            free(root)
+            free(root);
+            return temp;
         }
         else
         {
@@ -50,11 +56,42 @@ void removeNode(struct Node* root, int data)
         }
         
     }
+    return root;
 }
 
-void search(struct Node* root)
+struct Node* insertNode(struct Node* root, int data)
 {
+    if (root == NULL)
+    {
+        return addNode(data);
+    }
 
+    if (data <= root->data && root->left == NULL)
+        root->left = addNode(data);
+    else if (data > root->data && root->right == NULL)
+        root->right = addNode(data);
+    else if (data <= root->data && root->left != NULL)
+        insertNode(root->left, data);
+    else if (data > root->data && root->right != NULL)
+        insertNode(root->right, data);
+
+    return root;
+
+}
+
+struct Node* search(struct Node* root, int data)
+{
+    if (root == NULL)
+    {
+        printf("%d could not be found\n");
+        return NULL;
+    }
+    if (data == root->data)
+        return root;
+    else if (data < root->data)
+        return search(root->left, data);
+    else if (data > root->data)
+        return search(root->right, data);
 }
 
 
