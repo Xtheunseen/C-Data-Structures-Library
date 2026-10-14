@@ -10,7 +10,7 @@ typedef struct{
 struct Node* addNode(int data);
 struct Node* insertNode(struct Node* root, int data);
 struct Node* removeNode(struct Node* root, int data);
-struct Node*(struct Node* root, int data);
+struct Node* search(struct Node* root, int data);
 
 
 #endif
